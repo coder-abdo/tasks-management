@@ -9,4 +9,8 @@ export class AuthController {
   async signup(@Body() signupDto: AuthDto): Promise<void> {
     return this.authService.signup(signupDto);
   }
+  @Post('signin')
+  async signIn(@Body() signInDto: AuthDto): Promise<{ accessToken: string }> {
+    return this.authService.signIn(signInDto);
+  }
 }
